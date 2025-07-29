@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog | The Nigga Gang Records</title>
+    <link href="https://fonts.googleapis.com/css?family=Baskervville+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gravitas+One" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-logo">
+            <a href="index.html"><img src="assets/images/logo.png" alt="The Nigga Gang Logo" style="height:48px;vertical-align:middle;border-radius:8px;"></a>
+        </div>
+        <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li class="dropdown">
+                <a href="#">More</a>
+                <ul class="dropdown-content">
+                    <li><a href="catalog.html">Catalog</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="#" id="magazine-link">Digital Magazine</a></li>
+                </ul>
+            </li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="catalog">
+        <div class="artist-hero" style="text-align:center; margin-bottom:2rem;">
+            <img src="assets/images/beautiful.jpg" alt="Allenbeatz Tng" style="width:180px;height:180px;border-radius:50%;box-shadow:0 4px 24px rgba(0,0,0,0.12);margin-bottom:1rem;">
+            <h1 style="font-family:'Gravitas One',cursive;font-size:2.5rem;margin-bottom:0.5rem;">Allenbeatz Tng</h1>
+            <p style="font-size:1.2rem;color:#ec0606;max-width:600px;margin:0 auto;">Allenbeatz Tng is a rising star in TNG Records, known for his unique sound and creative vision. Explore his latest releases and projects below.</p>
+        </div>
+        <div class="catalog-list" style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;">
+            <div class="catalog-item" style="background:#fff;border-radius:16px;box-shadow:0 2px 16px rgba(34,34,59,0.09);padding:1.5rem;max-width:300px;text-align:center;">
+                <img src="assets/images/beautiful.jpg" alt="Beautiful" style="height:120px;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:1rem;">
+                <h2 style="font-family:'Gravitas One',cursive;font-size:1.3rem;">Beautiful</h2>
+                <p style="color:#de0101;font-size:1rem;">Single</p>
+                <p style="color:#e90404;font-size:0.95rem;">Release Date: 2025</p>
+            </div>
+            <div class="catalog-item" style="background:#fff;border-radius:16px;box-shadow:0 2px 16px rgba(34,34,59,0.09);padding:1.5rem;max-width:300px;text-align:center;">
+                <img src="assets/images/construction.jpg" alt="Construction" style="height:120px;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:1rem;">
+                <h2 style="font-family:'Gravitas One',cursive;font-size:1.3rem;">Construction</h2>
+                <p style="color:#222;font-size:1rem;">Single</p>
+                <p style="color:#666;font-size:0.95rem;">Release Date: 2025</p>
+            </div>
+        </div>
+    </section>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  var magazineLink = document.getElementById('magazine-link');
+  if (magazineLink) {
+    magazineLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'magazine.html';
+    });
+  }
+});
+</script>
+</body>
+</html>

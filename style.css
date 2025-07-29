@@ -1,0 +1,217 @@
+/* Hamburger menu always visible */
+.nav-toggle {
+    display: block;
+    position: absolute;
+    right: 1.2rem;
+    top: 1.2rem;
+    z-index: 1001;
+}
+
+.main-nav ul.nav-dropdown {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100vw;
+    background: #fff;
+    box-shadow: 0 8px 32px rgba(34,34,59,0.13);
+    border-radius: 0 0 16px 16px;
+    padding: 1.2rem 0;
+    z-index: 1000;
+    list-style: none;
+    margin: 0;
+}
+.main-nav ul.nav-dropdown.open {
+    display: flex;
+}
+
+/* Theme variables */
+:root {
+    --bg-main: #f8fafc;
+    --bg-section: #fff;
+    --text-main: #22223b;
+    --nav-bg: rgba(255,255,255,0.9);
+    --nav-text: #111;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-main: #181a20;
+    --bg-section: #23263a;
+    --text-main: #f8fafc;
+    --nav-bg: rgba(34,34,59,0.95);
+    --nav-text: #f8fafc;
+    --shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+}
+
+body {
+    font-family: 'Baskervville SC', serif;
+    font-size: 22px;
+    background: var(--bg-main);
+    color: var(--text-main);
+    transition: background 0.3s, color 0.3s;
+}
+
+nav.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: var(--nav-bg);
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    flex-wrap: wrap;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav.main-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.15rem;
+}
+
+nav.main-nav a {
+    color: var(--nav-text) !important;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff, 2px 2px 0 #ccc;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav.main-nav a {
+    color: #111 !important;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff, 2px 2px 0 #ccc;
+    letter-spacing: 1px;
+}
+
+nav.main-nav li {
+    display: block;
+    margin: 0;
+}
+
+.nav-logo {
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+}
+/* Removed orphaned gradient and animation properties that were causing errors */
+
+@keyframes gradientMove {
+    0% { background-position: 70% 20%, 20% 80%; }
+    100% { background-position: 60% 30%, 30% 70%; }
+}
+
+/* Center main content and add shadow */
+main, .main-content, section {
+    box-shadow: 0 4px 32px rgba(34,34,59,0.09);
+    border-radius: 16px;
+    background: var(--bg-section);
+    margin: 2.5rem auto;
+    max-width: 900px;
+    padding: 2.5rem 2rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Add a soft fade-in animation to sections */
+section {
+    animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+    nav.main-nav {
+        flex-direction: column;
+        padding: 0.7rem 0.5rem;
+    }
+    nav.main-nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        align-items: flex-start;
+    }
+    .nav-logo {
+        margin-bottom: 0.7rem;
+        margin-right: 0;
+        justify-content: center;
+    }
+    main, .main-content, section {
+        padding: 1rem 0.5rem;
+        max-width: 100%;
+    }
+    .portfolio-images, .catalog-list {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: center !important;
+    }
+}
+
+/* Dropdown container */
+.main-nav ul li.dropdown {
+    position: relative;
+}
+
+.main-nav ul li.dropdown .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 8px 24px rgba(34,34,59,0.13);
+    z-index: 1000;
+    min-width: 180px;
+    border-radius: 0 0 12px 12px;
+    padding: 0.5rem 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.25s, transform 0.25s;
+    display: none;
+}
+
+.main-nav ul li.dropdown .dropdown-content li {
+    display: block;
+    padding: 0;
+}
+
+.main-nav ul li.dropdown .dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav ul li.dropdown .dropdown-content a:hover {
+    background-color: #f2f2f2;
+}
+
+/* Show dropdown on hover */
+.main-nav ul li.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.main-nav ul li.dropdown.open .dropdown-content {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
